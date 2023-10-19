@@ -1,2 +1,2 @@
-# callback-promise-async-await
-Callback - Promise - Async Await
+# callback-js
+Callback JS
