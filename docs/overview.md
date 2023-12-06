@@ -1,29 +1,136 @@
-# PWA
+# Callbacks
 
-## Visión General
+## Callbacks / Function / 01
 
+```html
+<p id="ele"></p>
+```
 
-1. Sync / Callbacks / Function / 01
+```js
+const doSomething = function (callback) {
+  callback();
+}
+
+doSomething(function () {
+  document.getElementById("ele").textContent = "Hello Word !!";
+});
+```
+
+```sh
+Hello Word !!
+```
 
 https://codepen.io/ejimenez123/pen/VwamPva
 
-2. Sync / Callbacks / Arrow / 01
+## Callbacks / Arrow / 01
+
+```html
+<p id="ele"></p>
+```
+
+```js
+const doSomething = callback => callback ()
+
+doSomething ( 
+  () => document.getElementById("ele").textContent = 'Hello Word !!'
+)
+```
+
+```sh
+Hello Word !!
+```
 
 https://codepen.io/ejimenez123/pen/dyMONjv
 
-3. Sync / Callbacks / Function / 02
+## Callbacks / Function / 02
+
+```html
+<p id="ele"></p>
+```
+
+```js
+const doSomething = function (callback) {
+  callback('Hello Word !!');
+}
+
+doSomething(function(valueThatTheySetMe){
+  document.getElementById("ele").textContent = valueThatTheySetMe;
+});
+```
+
+```sh
+Hello Word !!
+```
 
 https://codepen.io/ejimenez123/pen/BaKpoMx
 
-4. Sync / Callbacks / Arrow / 02
+## Callbacks / Arrow / 02
+
+```html
+<p id="ele"></p>
+```
+
+```js
+const doSomething = callback => callback('Hello Word !!')
+
+doSomething(
+  valueThatTheySetMe => document.getElementById("ele").textContent = valueThatTheySetMe
+)
+```
+
+```sh
+Hello Word !!
+```
 
 https://codepen.io/ejimenez123/pen/KKzadEJ
 
-5. Sync / Callbacks / Function / 03
+## Callbacks / Function / 03
+
+```html
+<input type="text" id="a"/>
+<input type="text" id="b"/>
+
+<button type="button" id="operate">Add</button>
+
+<p id="ele"></p>
+```
+
+```js
+const add = function (a, b, callback) { 
+  return callback(a + b);
+}
+
+document.getElementById("operate").addEventListener('click', function() {
+  let a = parseInt(document.getElementById("a").value),
+      b = parseInt(document.getElementById("b").value);
+  add(a, b, function(r) {
+    document.getElementById("ele").textContent = 'The result is: ' + r;
+  })
+})
+```
 
 https://codepen.io/ejimenez123/pen/MWyJvXK
 
-6. Sync / Callbacks / Arrow / 03
+## Callbacks / Arrow / 03
+
+```html
+<input type="text" id="a"/>
+<input type="text" id="b"/>
+
+<button type="button" id="operate">Add</button>
+
+<p id="ele"></p>
+```
+
+```js
+const add = (a, b, callback) => callback(a + b)
+
+document.getElementById("operate").addEventListener('click', () => {
+  let a = parseInt(document.getElementById("a").value),
+      b = parseInt(document.getElementById("b").value)
+  add(a, b, r => document.getElementById("ele").textContent = 'The result is: ' + r )
+})
+```
 
 https://codepen.io/ejimenez123/pen/yLOgoxY
 
