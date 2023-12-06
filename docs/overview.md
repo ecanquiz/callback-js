@@ -1,6 +1,6 @@
 # Callbacks
 
-## Callbacks / Function / 01
+## 01 - Callbacks (Function)
 
 ```html
 <p id="ele"></p>
@@ -22,7 +22,7 @@ Hello Word !!
 
 https://codepen.io/ejimenez123/pen/VwamPva
 
-## Callbacks / Arrow / 01
+## 01 - Callbacks (Arrow)
 
 ```html
 <p id="ele"></p>
@@ -42,7 +42,7 @@ Hello Word !!
 
 https://codepen.io/ejimenez123/pen/dyMONjv
 
-## Callbacks / Function / 02
+## 02 - Callbacks (Function)
 
 ```html
 <p id="ele"></p>
@@ -64,7 +64,7 @@ Hello Word !!
 
 https://codepen.io/ejimenez123/pen/BaKpoMx
 
-## Callbacks / Arrow / 02
+## 02 - Callbacks (Arrow)
 
 ```html
 <p id="ele"></p>
@@ -84,7 +84,7 @@ Hello Word !!
 
 https://codepen.io/ejimenez123/pen/KKzadEJ
 
-## Callbacks / Function / 03
+## 03 - Callbacks (Function)
 
 ```html
 <input type="text" id="a"/>
@@ -111,7 +111,7 @@ document.getElementById("operate").addEventListener('click', function() {
 
 https://codepen.io/ejimenez123/pen/MWyJvXK
 
-## Callbacks / Arrow / 03
+## 03 - Callbacks (Arrow)
 
 ```html
 <input type="text" id="a"/>
@@ -134,39 +134,167 @@ document.getElementById("operate").addEventListener('click', () => {
 
 https://codepen.io/ejimenez123/pen/yLOgoxY
 
-7. Sync / Callbacks / Function / 04
+## 04 - Callbacks (Function)
+
+```html
+<button type="button" id="btn">Press this button</button>
+```
+
+```js
+const greet = function (name) {
+  alert('Hello ' + name);
+}
+
+const processUserInput = function (callback) {
+  let name = prompt('Please enter your name');
+  callback(name);
+}
+
+document.getElementById("btn").addEventListener('click', function() {
+  processUserInput(greet);  
+})
+```
 
 https://codepen.io/ejimenez123/pen/vYGgJbz
 
-8. Sync / Callbacks / Arrow / 04
+## 04 - Callbacks (Arrow)
+
+```html
+<button type="button" id="btn">Press this button</button>
+```
+
+```js
+const greet = name => alert('Hello ' + name)
+
+const processUserInput = callback => {
+  let name = prompt('Please enter your name')
+  callback(name)
+}
+
+document.getElementById("btn").addEventListener('click', () => processUserInput(greet))
+```
 
 https://codepen.io/ejimenez123/pen/GRZrveP
 
-9. Sync / Callbacks / Function / 05
+## 05 - Callbacks (Function)
+
+```html
+<p id="ele"></p>
+```
+
+```js
+const greet = function (callback) {
+  callback();
+}
+ 
+greet(function () {
+  document.getElementById("ele").textContent = "Hello Jhon White !!";
+});
+```
 
 https://codepen.io/ejimenez123/pen/jOqwgMY
 
-10. Sync / Callbacks / Function / 05
+## 05 - Callbacks (Function)
+
+```html
+<p id="ele"></p>
+```
+
+```js
+const greet = function (callback) {
+  callback();
+}
+ 
+greet(function () {
+  document.getElementById("ele").textContent = "Hello Jhon White !!";
+});
+```
 
 https://codepen.io/ejimenez123/pen/KKzqOgQ
 
-11. Sync / Callbacks / Arrow / 05
+## 05 - Callbacks (Arrow)
+
+```html
+<p id="ele"></p>
+```
+
+```js
+const greet = callback => callback()
+
+greet(() => {
+  document.getElementById("ele").textContent = "Hello Jhon White !!"
+})
+```
 
 https://codepen.io/ejimenez123/pen/abNweBM
 
-12. Sync / Callbacks / Function / 06
+## 06 - Callbacks (Function)
+
+```html
+<p id="ele"></p>
+```
+
+```js
+const greet = function (name, callback) {
+  callback(name);
+}
+
+greet("Jhon White", function (name) {
+  document.getElementById("ele").textContent = `Hello ${name} !!`;
+});
+```
 
 https://codepen.io/ejimenez123/pen/YzqxKqQ
 
-13. Sync / Callbacks / Arrow / 06
+## 06 - Callbacks (Arrow)
+
+```html
+<p id="ele"></p>
+```
+
+```js
+const greet = (name, callback) => callback(name)
+
+greet("Jhon White", name => {
+  document.getElementById("ele").textContent = `Hello ${name} !!`
+})
+```
 
 https://codepen.io/ejimenez123/pen/GRZvKqy
 
-14. Sync / Callbacks / Function / 07
+## 07 - Callbacks (Function)
+
+```html
+<p id="ele"></p>
+```
+
+```js
+const greet = function (name, callback) {
+  callback(name);
+}
+
+const greeting = function (name) {     
+   document.getElementById("ele").textContent = `Hello ${name} !!`;
+}
+
+greet("Jhon White", greeting);
+```
 
 https://codepen.io/ejimenez123/pen/vYGJBXe
 
-15. Sync / Callbacks / Arrow / 07
+## 07 - Callbacks (Arrow)
+
+```html
+<p id="ele"></p>
+```
+
+```js
+const greet = (name, callback) => callback(name)
+
+const greeting = name => document.getElementById("ele").textContent = `Hello ${name} !!`  
+
+greet("Jhon White", greeting)
+```
 
 https://codepen.io/ejimenez123/pen/oNxevYZ
 
