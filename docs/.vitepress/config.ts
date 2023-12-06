@@ -2,13 +2,13 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "PWA",
+  title: "CallbackJS",
   description: "Aprende",
   base: '/callback-js/', //  The default path during deployment / secondary address / base can be used/
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: '/mylogo.png',  
-    siteTitle: 'Aprende PWA',
+    siteTitle: 'CallbackJS',
     nav: [
       { text: 'Inicio', link: '/' },
       { text: 'Tutorial', link: '/overview' },
@@ -28,7 +28,7 @@ export default defineConfig({
       }      
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/ecanquiz/learn-pwa' }
+      { icon: 'github', link: 'https://github.com/ecanquiz/callback-js' }
     ],
     footer: {
       message: 'Released under the MIT License.',
