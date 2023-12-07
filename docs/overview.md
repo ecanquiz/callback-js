@@ -298,50 +298,551 @@ greet("Jhon White", greeting)
 
 https://codepen.io/ejimenez123/pen/oNxevYZ
 
-16. Sync / Callbacks / Function / 08
+## 08 - Callbacks (Function)
+
+```html
+<p id="ele1"></p>
+<p id="ele2"></p>
+<p id="ele3"></p>
+<p id="ele4"></p>
+<p id="ele5"></p>
+```
+
+```js
+// CALLBACK HELL EXAMPLE
+
+/*
+Case of use (instructions)
+ 1° Add 2 numbers,
+ 2° The result to square it,
+ 3° Divide the result by 2,
+ 4° The result subtract 100,
+ 5° The result, validate if it is greater than 0
+*/
+
+const add = function (num1, num2, callback) {
+  callback(num1 + num2);
+}
+
+const square = function (num, callback) {
+  callback(num * num);
+}
+
+const divide = function (num, callback) {
+  callback(num / 2);
+}
+
+const subtract = function (num, callback) {
+  callback(num - 100);
+}
+
+const isGreaterZero = function (num, callback) {
+  callback(num > 0);
+}
+
+add(8, 5, function (resultAdd) {    
+  document.getElementById("ele1").textContent = `Sum of 2 numbers: ${resultAdd}`;
+  square(resultAdd, function (resultSquare) {
+    document.getElementById("ele2").textContent = `Square of the sum: ${resultSquare}`;
+    divide(resultSquare, function (resultDivide) {        
+      document.getElementById("ele3").textContent = `Square division: ${resultDivide}`;
+      subtract(resultDivide, function (resultSubtract) {
+        document.getElementById("ele4").textContent = `Subtract 100: ${resultSubtract}`;	  	  
+        isGreaterZero(resultSubtract, function (resultIsGreaterZero) {
+          document.getElementById("ele5").textContent = `Is greater than zero: ${resultIsGreaterZero}`;
+        });
+      });
+    });
+  });
+});
+```
 
 https://codepen.io/ejimenez123/pen/bGprbgm
 
-17. Sync / Callbacks / Arrow / 08
+## 08 - Callbacks (Arrow)
+
+```html
+<p id="ele1"></p>
+<p id="ele2"></p>
+<p id="ele3"></p>
+<p id="ele4"></p>
+<p id="ele5"></p>
+```
+
+```js
+// CALLBACK HELL EXAMPLE
+
+/*
+Case of use (instructions)
+ 1° Add 2 numbers,
+ 2° The result to square it,
+ 3° Divide the result by 2,
+ 4° The result subtract 100,
+ 5° The result, validate if it is greater than 0
+*/
+
+const add = (num1, num2, callback) => callback(num1 + num2)
+const square = (num, callback) => callback(num * num)
+const divide = (num, callback) => callback(num / 2)
+const subtract = (num, callback) => callback(num - 100)
+const isGreaterZero = (num, callback) => callback(num > 0)
+
+add(8, 5, resultAdd => {    
+  document.getElementById("ele1").textContent = `Sum of 2 numbers: ${resultAdd}`
+  square(resultAdd, resultSquare => {
+    document.getElementById("ele2").textContent = `Square of the sum: ${resultSquare}`
+    divide(resultSquare, resultDivide => {        
+      document.getElementById("ele3").textContent = `Square division: ${resultDivide}`
+      subtract(resultDivide, resultSubtract => {
+        document.getElementById("ele4").textContent = `Subtract 100: ${resultSubtract}`	  	  
+        isGreaterZero(resultSubtract, resultIsGreaterZero => {
+          document.getElementById("ele5").textContent = `Is greater than zero: ${resultIsGreaterZero}`
+        })
+      })
+    })
+  })
+})
+```
 
 https://codepen.io/ejimenez123/pen/OJNjLmw
 
-18. Sync / Callbacks / Function / 09
+## 09 - Callbacks (Function)
+
+```html
+<p id="ele1"></p>
+<p id="ele2"></p>
+<p id="ele3"></p>
+<p id="ele4"></p>
+<p id="ele5"></p>
+```
+
+```js
+// CALLBACK HELL EXAMPLE
+
+/*
+Case of use (instructions)
+ 1° Add 2 numbers,
+ 2° The result to square it,
+ 3° Divide the result by 2,
+ 4° The result subtract 100,
+ 5° The result, validate if it is greater than 0
+   
+Refactor
+  Define the functions to parts, and instead of passing 
+  the anonymous function we pass the name of the defined function.
+*/
+
+const add = function (num1, num2, callback) {
+  callback(num1 + num2);
+}
+
+const square = function (num, callback) {
+  callback(num * num);
+}
+
+const divide = function (num, callback) {
+  callback(num / 2);
+}
+
+const subtract = function (num, callback) {
+  callback(num - 100);
+}
+
+const isGreaterZero = function (num, callback) {
+  callback(num > 0);
+}
+
+const callbackIsGreaterZero = function (resultIsGreaterZero) {
+  document.getElementById("ele5").textContent = `Is greater than zero: ${resultIsGreaterZero}`;
+}
+
+const callbackSubtract = function (resultSubtract) {
+  document.getElementById("ele4").textContent = `Subtract 100: ${resultSubtract}`;
+  isGreaterZero(resultSubtract, callbackIsGreaterZero);
+}
+
+const callbackDivide = function (resultDivide) {
+  document.getElementById("ele3").textContent = `Square division: ${resultDivide}`;
+  subtract(resultDivide, callbackSubtract);
+}
+
+const callbackSquare = function (resultSquare) {
+  document.getElementById("ele2").textContent = `Square of the sum: ${resultSquare}`;
+  divide(resultSquare, callbackDivide);
+}
+
+const callbackAdd = function (resultAdd) {
+  document.getElementById("ele1").textContent = `Sum of 2 numbers: ${resultAdd}`;
+  square(resultAdd, callbackSquare);
+}
+
+add(8, 15, callbackAdd);
+```
 
 https://codepen.io/ejimenez123/pen/OJNjLjo
 
-19. Sync / Callbacks / Arrow / 09
+## 09 - Callbacks (Arrow)
+
+```html
+<p id="ele1"></p>
+<p id="ele2"></p>
+<p id="ele3"></p>
+<p id="ele4"></p>
+<p id="ele5"></p>
+```
+
+```js
+// CALLBACK HELL EXAMPLE
+
+/*
+Case of use (instructions)
+ 1° Add 2 numbers,
+ 2° The result to square it,
+ 3° Divide the result by 2,
+ 4° The result subtract 100,
+ 5° The result, validate if it is greater than 0
+  
+Refactor
+  Define the functions to parts, and instead of passing 
+  the anonymous function we pass the name of the defined function.
+*/
+
+const add = (num1, num2, callback) => callback(num1 + num2)
+const square = (num, callback) => callback(num * num)
+const divide = (num, callback) => callback(num / 2)
+const subtract = (num, callback) => callback(num - 100)
+const isGreaterZero = (num, callback) => callback(num > 0)
+
+const callbackIsGreaterZero = resultIsGreaterZero => {
+  document.getElementById("ele5").textContent = `Is greater than zero: ${resultIsGreaterZero}`
+}
+
+const callbackSubtract = resultSubtract => {
+  document.getElementById("ele4").textContent = `Subtract 100: ${resultSubtract}`
+  isGreaterZero(resultSubtract, callbackIsGreaterZero)
+}
+
+const callbackDivide = resultDivide => {
+  document.getElementById("ele3").textContent = `Square division: ${resultDivide}`
+  subtract(resultDivide, callbackSubtract)
+}
+
+const callbackSquare = resultSquare => {
+  document.getElementById("ele2").textContent = `Square of the sum: ${resultSquare}`
+  divide(resultSquare, callbackDivide)
+}
+
+const callbackAdd = resultAdd => {
+  document.getElementById("ele1").textContent = `Sum of 2 numbers: ${resultAdd}`
+  square(resultAdd, callbackSquare)
+}
+
+add(8, 15, callbackAdd);
+```
 
 https://codepen.io/ejimenez123/pen/wvGqwqQ
 
-20. Sync / HowDoPromisesWorkInJS / Function / 01
+## 01 - HowDoPromisesWorkInJS (Function)
+
+```html
+<div id="myContent"></div>
+<button id="btn">Execute</button>
+```
+
+```js
+const setText = function(data) {
+  document.getElementById("myContent").textContent = data;
+}
+
+const getData = function(callback) {
+  setText('Requesting authorization ...');
+  setTimeout(function() {
+    callback(true);
+  }, 2000);
+}
+
+const showData = function(callback) {
+  setText('... Waiting to show the information ...');
+  setTimeout(function() {
+    callback({name: '... Jhon White.'});
+  }, 2000);
+}
+
+document.getElementById("btn").addEventListener('click', function() {
+  getData(function(authorization) {
+    if (authorization) {
+      showData(function(user) {
+        setText(user.name);
+      });
+    }
+  });
+});
+```
 
 https://codepen.io/ejimenez123/pen/abNEWeb
 
-21. Sync / HowDoPromisesWorkInJS / Arrow / 01
+## 01 - HowDoPromisesWorkInJS (Arrow)
+
+```html
+<div id="myContent"></div>
+<button id="btn">Execute</button>
+```
+
+```js
+const setText = data =>
+  document.getElementById("myContent").textContent = data  
+
+const getData = callback => {
+  setText('Requesting authorization ...')
+  setTimeout(() => callback(true), 2000)
+}
+
+const showData = callback => {
+  setText('... Waiting to show the information ...')
+  setTimeout(() => callback({name: '... Jhon White.'}), 2000)
+}
+
+document.getElementById("btn").addEventListener('click', () => {
+  getData(authorization => {
+    if (authorization)
+      showData(user => setText(user.name))      
+  })
+})
+```
 
 https://codepen.io/ejimenez123/pen/yLOpXBZ
 
-22. Sync / HowDoPromisesWorkInJS / Function / 02
+## 02 - HowDoPromisesWorkInJS (Function)
+
+```html
+<div id="myContent"></div>
+<button id="btn">Execute</button>
+```
+
+```js
+const setText = function(data) {
+  document.getElementById("myContent").textContent = data;
+}
+
+const getData = function() {
+  return new Promise(function(resolve, reject) {
+    setText('Requesting authorization ...');
+    setTimeout(function() {
+      resolve(true);
+    }, 2000);
+  });
+}
+
+const showData = function() {
+  return new Promise(function(resolve, reject) {
+    setText('... Waiting to show the information ...');
+    setTimeout(function() {
+      resolve({name: '... Jhon White.'});
+    }, 2000);
+  })
+}
+
+document.getElementById("btn").addEventListener('click', function() {
+  getData().then(function(authorization) {
+    if (authorization) {
+      showData().then(function(user) {
+        setText(user.name);
+      });
+    }
+  });
+});
+```
 
 https://codepen.io/ejimenez123/pen/vYGpZEx
 
-23. Sync / HowDoPromisesWorkInJS / Arrow / 02
+## 02 - HowDoPromisesWorkInJS (Arrow)
+
+```html
+<div id="myContent"></div>
+<button id="btn">Execute</button>
+```
+
+```js
+const setText = data =>
+    document.getElementById("myContent").textContent = data
+
+const getData = () => {
+  return new Promise((resolve, reject) => {
+    setText('Requesting authorization ...')
+    setTimeout(() => resolve(true), 2000)
+  })
+}
+
+const showData = () => {
+  return new Promise((resolve, reject) => {
+    setText('... Waiting to show the information ...')
+    setTimeout(() => resolve({name: '... Jhon White.'}), 2000)
+  })
+}
+
+document.getElementById("btn").addEventListener('click', () => {
+  getData().then(authorization => {
+    if (authorization) {
+      showData().then(user => setText(user.name))
+    }
+  })
+})
+```
 
 https://codepen.io/ejimenez123/pen/qBZpjOZ
 
-24. Sync / HowDoPromisesWorkInJS / Function / 03
+## 03 - HowDoPromisesWorkInJS (Function)
+
+```html
+<div id="myContent"></div>
+<button id="btn">Execute</button>
+```
+
+```js
+const setText = function(data) {
+  document.getElementById("myContent").textContent = data;
+}
+
+const getData = function() {
+  return new Promise(function(resolve, reject) {
+    setText('Requesting authorization ...');
+    setTimeout(function() {
+      resolve(true);
+    }, 2000);
+  });
+}
+
+const showData = function() {
+  return new Promise(function(resolve, reject) {
+    setText('... Waiting to show the information ...');
+    setTimeout(function() {
+      resolve({name: '... Jhon White.'});
+    }, 2000);
+  });
+}
+
+document.getElementById("btn").addEventListener('click', function() {
+  getData().then(function(authorization) {
+    if (authorization) {
+      return showData();
+    }
+  }).then(function(user) {
+    setText(user.name);
+  });
+});
+```
 
 https://codepen.io/ejimenez123/pen/NWNXgxB
 
-25. Sync / HowDoPromisesWorkInJS / Arrow / 03
+## 03 - HowDoPromisesWorkInJS (Arrow)
+
+```html
+<div id="myContent"></div>
+<button id="btn">Execute</button>
+```
+
+```js
+const setText = data => 
+  document.getElementById("myContent").textContent = data
+
+const getData = () => {
+  return new Promise((resolve, reject) => {
+    setText('Requesting authorization ...')
+    setTimeout(() => resolve(true), 2000)
+  })
+}
+
+const showData = () => {
+  return new Promise((resolve, reject) => {
+    setText('... Waiting to show the information ...')
+    setTimeout(() => resolve({name: '... Jhon White.'}), 2000)
+  })
+}
+
+document.getElementById("btn").addEventListener('click', () => {
+  getData().then(authorization => {
+    if (authorization) {
+      return showData()
+    }
+  }).then(user => setText(user.name))
+})
+```
 
 https://codepen.io/ejimenez123/pen/dyMJRXN
 
-26. Sync / HowDoPromisesWorkInJS / Function / 04
+## 04 -  HowDoPromisesWorkInJS (Function)
+
+```html
+<div id="myContent"></div>
+<button id="btn">Execute</button>
+```
+
+```js
+const setText = function(data) {
+  document.getElementById("myContent").textContent = data;
+}
+
+const getData = function() {
+  return new Promise(function(resolve, reject) {
+    setText('Requesting authorization ...');
+    setTimeout(function() {
+      resolve(true);
+    }, 2000);
+  });
+}
+
+const showData = function() {
+  return new Promise(function(resolve, reject) {
+    setText('... Waiting to show the information ...');
+    setTimeout(function() {
+      resolve({name: '... Jhon White.'});
+    }, 2000);
+  });
+}
+
+document.getElementById("btn").addEventListener('click', async function() {    
+  const authorization = await getData();
+  if (authorization) {
+    let user = await showData();
+    setText(user.name);
+  }
+});
+```
 
 https://codepen.io/ejimenez123/pen/oNxpwzY
 
-27. Sync / HowDoPromisesWorkInJS / Arrow / 04
+## 04 - HowDoPromisesWorkInJS (Arrow)
+
+```html
+<div id="myContent"></div>
+<button id="btn">Execute</button>
+```
+
+```js
+const setText = data =>
+  document.getElementById("myContent").textContent = data
+
+const getData = () => {
+  return new Promise((resolve, reject) => {
+    setText('Requesting authorization ...')
+    setTimeout(() => resolve(true), 2000)
+  })
+}
+
+const showData = () => {
+  return new Promise((resolve, reject) => {
+    setText('... Waiting to show the information ...')
+    setTimeout(() => resolve({name: '... Jhon White.'}), 2000)
+  })
+}
+
+document.getElementById("btn").addEventListener('click', async () => {    
+  const authorization = await getData()
+  if (authorization) {
+    let user = await showData()
+    setText(user.name)
+  }
+})
+```
 
 https://codepen.io/ejimenez123/pen/YzqYQpQ
