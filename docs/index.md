@@ -18,18 +18,12 @@ hero:
       link: https://ecanquiz.github.io/
 
 features:
-  - title: Aplicaciones Web Progresivas
-    details: Las PWA son aplicaciones web creadas y mejoradas con API modernas para ofrecer capacidades, confiabilidad e instalación mejoradas y, al mismo tiempo, llegar a cualquier persona, en cualquier lugar y en cualquier dispositivo, todo con una única base de código.
-  - title: Cimientos
-    details: Todas las aplicaciones web progresivas son, en esencia, sitios web modernos, por lo que es importante que su sitio web tenga una base sólida en diseño responsivo, dispositivos móviles y todo lo primero, diseño intrínseco y rendimiento web.
-  - title: Complemento Vite PWA
-    details: Complemento independiente del framework PWA de configuración cero para Vite. El complemento de Vite funciona en diferentes frameworks SPA. Integraciones de PWA para Vite y el ecosistema.
+  - title: Callback JavaScript
+    details: En programación, un callback (o función de devolución de llamada) es una función que se pasa como argumento a otra función, y que se ejecuta dentro de la función que la recibe, en un momento específico. En otras palabras, es una función que se llama después de que otra función termine su ejecución.
+  - title: Promise JavaScript
+    details: En JavaScript, una promesa (Promise) es un objeto que representa la finalización o el fracaso de una operación asíncrona y su valor resultante. Es una forma de manejar el código asíncrono, permitiendo que tu código espere a que una operación se complete antes de continuar con la siguiente
+  - title: Async / Await JavaScript
+    details: En JavaScript, async y await son características que facilitan el manejo de código asíncrono, haciendo que se vea y se comporte más como código sincrónico. Async se utiliza para declarar funciones asíncronas, y Await se utiliza para pausar la ejecución de una función asíncrona hasta que una promesa se resuelva.
     
-footer: MIT Licensed | Copyleft © 2023-present Ernesto Canquiz
+footer: MIT Licensed | Copyleft © 2025-present Ernesto Canquiz
 ---
-
- 
- 
-
-
-
