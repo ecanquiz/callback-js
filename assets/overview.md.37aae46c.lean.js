@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,S as l}from"./chunks/framework.a4677ddd.js";const i=JSON.parse('{"title":"Callbacks","description":"","frontmatter":{},"headers":[],"relativePath":"overview.md","filePath":"overview.md"}'),o={name:"overview.md"},p=l("",113),e=[p];function t(c,r,F,y,D,C){return n(),a("div",null,e)}const u=s(o,[["render",t]]);export{i as __pageData,u as default};
