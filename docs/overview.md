@@ -1,46 +1,37 @@
-# Callbacks
+# Callbacks JavaScript
 
-## 01 - Callbacks (Function)
+En programación, un callback (o función de devolución de llamada) es una función que se pasa como argumento a otra función, y que se ejecuta dentro de la función que la recibe, en un momento específico. En otras palabras, es una función que se llama después de que otra función termine su ejecución.
 
-```html
-<p id="ele"></p>
-```
+## Función de orden superior
 
-```js
-const doSomething = function (callback) {
-  callback();
-}
+Las funciones que aceptan otras funciones como argumentos se llaman **funciones de orden superior**. Los callbacks son comunes en funciones de orden superior.
 
-doSomething(function () {
-  document.getElementById("ele").textContent = "Hello Word !!";
-});
-```
+## Asincronía
 
-```sh
-Hello Word !!
-```
+Los callbacks son especialmente útiles para manejar operaciones asíncronas, como solicitudes de red o temporizadores, donde la respuesta no está disponible inmediatamente. 
 
-https://codepen.io/ejimenez123/pen/VwamPva
+## Sintaxis
 
-## 01 - Callbacks (Arrow)
+En diferentes lenguajes, la sintaxis para definir y usar callbacks puede variar, pero la idea central es la misma: pasar una función como parámetro. 
 
-```html
-<p id="ele"></p>
-```
+## Ventajas
 
-```js
-const doSomething = callback => callback ()
+- Flexibilidad: Permiten crear código más modular y reutilizable. 
+- Manejo de eventos: Son esenciales para manejar eventos y acciones del usuario.
+- Asincronía: Facilitan la ejecución de tareas en segundo plano sin bloquear el hilo principal de la aplicación. 
+- Extensiones: Los callbacks son una parte importante de muchos frameworks y bibliotecas. 
 
-doSomething ( 
-  () => document.getElementById("ele").textContent = 'Hello Word !!'
-)
-```
+En resumen, los callbacks son una herramienta poderosa en programación que permiten una mayor flexibilidad y dinamismo en el manejo de la ejecución del código.
 
-```sh
-Hello Word !!
-```
+En este tutorial, veremos de qué se tratan los callbacks. Comenzaremos con ejemplos sencillos y avanzaremos a ejemplos más avanzados, lo que nos llevará al llamado callbacks hell (infierno de las devoluciones de llamadas).
 
-https://codepen.io/ejimenez123/pen/dyMONjv
+:::info 
+**callback hell** es una situación en la que la anidación excesiva de callbacks dificulta la comprensión y el mantenimiento del código, especialmente en programación asíncrona. Es importante buscar alternativas como promesas o async/await para evitar este problema. 
+:::
+
+Los **callback hell** dio lugar para que JavaScript ofreciera una solución más propicia que facilita la asincronia. Las **Promise JavaScript**
+
+Pasemos al primer ejemplo:
 
 ## 02 - Callbacks (Function)
 
