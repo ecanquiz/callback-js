@@ -21,7 +21,7 @@ export default defineConfig({
         sidebarDepth: 1,    // optional, defaults to 1
         items: [
           { text: 'Visión General', link: '/overview' },
-          { text: 'Progressive Web Apps', link: '/pwa' },
+          { text: 'Ejemplo de Callback #1', link: '/callback-1' },
           { text: 'Empezando', link: '/getting-started' },
           { text: 'Fundamentos', link: '/foundations' },          
         ]
