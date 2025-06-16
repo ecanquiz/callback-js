@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: Tutorial
-      link: /overview
+      link: /callback-0
     - theme: alt
       text: ecanquiz
       link: https://ecanquiz.github.io/
