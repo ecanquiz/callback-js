@@ -11,7 +11,7 @@ export default defineConfig({
     siteTitle: 'CallbackJS',
     nav: [
       { text: 'Inicio', link: '/' },
-      { text: 'Tutorial', link: '/overview' },
+      { text: 'Tutorial', link: '/callback-0' },
       { text: 'ecanquiz', link: 'https://ecanquiz.github.io/' }
     ],
 
@@ -20,10 +20,10 @@ export default defineConfig({
         path: '/',      // optional, link of the title, which should be an absolute path and must exist        
         sidebarDepth: 1,    // optional, defaults to 1
         items: [
-          { text: 'Visión General', link: '/overview' },
+          { text: 'Callbacks JavaScript', link: '/callback-0' },
           { text: 'Ejemplo de Callback #1', link: '/callback-1' },
-          { text: 'Empezando', link: '/getting-started' },
-          { text: 'Fundamentos', link: '/foundations' },          
+          { text: 'Ejemplo de Callback #2', link: '/callback-2' },
+          { text: 'Ejemplo de Callback #3', link: '/callback-3' },          
         ]
       }      
     ],
