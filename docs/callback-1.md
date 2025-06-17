@@ -30,10 +30,8 @@ Hello Word !!
 Ahora, mostraremos el mismo ejemplo pero esta vez usando Arrow Function.
 
 ```js
-// Declare the doSomething function
 const doSomething = callback => callback ()
 
-// Execute the doSomething function
 doSomething ( 
   () => document.getElementById("ele").textContent = 'Hello Word !!'
 )

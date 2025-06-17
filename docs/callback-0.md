@@ -33,48 +33,6 @@ Los **callback hell** dio lugar para que JavaScript ofreciera una solución más
 
 Pasemos al primer ejemplo:
 
-## 04 - Callbacks (Function)
-
-```html
-<button type="button" id="btn">Press this button</button>
-```
-
-```js
-const greet = function (name) {
-  alert('Hello ' + name);
-}
-
-const processUserInput = function (callback) {
-  let name = prompt('Please enter your name');
-  callback(name);
-}
-
-document.getElementById("btn").addEventListener('click', function() {
-  processUserInput(greet);  
-})
-```
-
-https://codepen.io/ejimenez123/pen/vYGgJbz
-
-## 04 - Callbacks (Arrow)
-
-```html
-<button type="button" id="btn">Press this button</button>
-```
-
-```js
-const greet = name => alert('Hello ' + name)
-
-const processUserInput = callback => {
-  let name = prompt('Please enter your name')
-  callback(name)
-}
-
-document.getElementById("btn").addEventListener('click', () => processUserInput(greet))
-```
-
-https://codepen.io/ejimenez123/pen/GRZrveP
-
 ## 05 - Callbacks (Function)
 
 ```html
