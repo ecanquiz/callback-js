@@ -1,1 +1,0 @@
-import{_ as s,o as a,c as n,S as l}from"./chunks/framework.a4677ddd.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"callback-3.md","filePath":"callback-3.md"}'),o={name:"callback-3.md"},p=l("",8),t=[p];function e(c,r,F,D,y,A){return a(),n("div",null,t)}const u=s(o,[["render",e]]);export{i as __pageData,u as default};
