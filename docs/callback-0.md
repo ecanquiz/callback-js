@@ -33,42 +33,6 @@ Los **callback hell** dio lugar para que JavaScript ofreciera una solución más
 
 Pasemos al primer ejemplo:
 
-## 07 - Callbacks (Function)
-
-```html
-<p id="ele"></p>
-```
-
-```js
-const greet = function (name, callback) {
-  callback(name);
-}
-
-const greeting = function (name) {     
-   document.getElementById("ele").textContent = `Hello ${name} !!`;
-}
-
-greet("Jhon White", greeting);
-```
-
-https://codepen.io/ejimenez123/pen/vYGJBXe
-
-## 07 - Callbacks (Arrow)
-
-```html
-<p id="ele"></p>
-```
-
-```js
-const greet = (name, callback) => callback(name)
-
-const greeting = name => document.getElementById("ele").textContent = `Hello ${name} !!`  
-
-greet("Jhon White", greeting)
-```
-
-https://codepen.io/ejimenez123/pen/oNxevYZ
-
 ## 08 - Callbacks (Function)
 
 ```html
