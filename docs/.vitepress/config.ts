@@ -28,7 +28,9 @@ export default defineConfig({
           { text: 'Ejemplo de Callback #5', link: '/callback-5' },
           { text: 'Ejemplo de Callback #6', link: '/callback-6' },
           { text: 'Ejemplo de Callback #7', link: '/callback-7' },
-          { text: 'Ejemplo de Callback #8', link: '/callback-8' },
+          { text: 'Callback Hell JavaScript', link: '/callback-hell' },
+          { text: 'Ejemplo de Callback Hell #1', link: '/callback-hell-1' },
+          { text: 'Ejemplo de Callback Hell #2', link: '/callback-hell-2' },
         ]
       }      
     ],
